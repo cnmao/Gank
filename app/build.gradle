@@ -14,8 +14,8 @@ repositories {
 
 android {
 
-    compileSdkVersion rootProject.ext.androidCompileSdkVersion
-    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
 
     defaultConfig {
         applicationId rootProject.ext.androidApplicationId
@@ -90,10 +90,10 @@ android {
 def dependency = rootProject.ext.dependencies
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     annotationProcessor dependency['daggerCompiler']
     testCompile dependency['junit']
-    compile(name:'feedbacksdk', ext:'aar')
+    compile(name: 'feedbacksdk', ext: 'aar')
     compile dependency['appcompat']
     compile dependency['design']
     compile dependency['recyclerView']
